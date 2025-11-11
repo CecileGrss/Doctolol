@@ -1,25 +1,28 @@
 /* ---------- Réglages généraux ---------- */
-
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
   background-color: #e4edf6;
+  font-family: 'Roboto', sans-serif;
 }
 
-footer{
+footer {
   text-align: center;
 }
 
 /* ---------- Structure principale ---------- */
-
 .content {
   display: grid;
-  grid-template-columns: 45% 45%; /* deux colonnes égales */
-  gap: 2%;                      /* espace entre les colonnes */
-  margin-left: 20%; 
-  width: 80%;
+  grid-template-columns: 1fr 1fr; /* deux colonnes égales par défaut */
+  gap: 2%;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
 }
 
 div {
@@ -28,17 +31,17 @@ div {
   box-shadow: 0 2px 4px rgba(5, 43, 71, 0.07);
   padding: 10px;
   display: block;
-  margin: 10px;
+  margin: 10px 0;
 }
 
 /* ---------- Sections principales ---------- */
-
 .bandeau {
   background-color: #107aca;
   width: 100%;
   height: 64px;
   display: flex;
   align-items: center;
+  padding: 0 1rem;
 }
 
 .annonce {
@@ -46,30 +49,42 @@ div {
   width: 100%;
   height: 152px;
   display: flex;
-  align-items: center;
+  justify-content: flex-start; /* aligné vers la gauche */
+  padding: 1rem;
+  flex-wrap: wrap;
 }
 
-.boite{
-	display: flex;
-  	justify-content: center;
-  	align-items: center;
-  	margin: 21%;
+.boite {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+    max-width: 600px;
+    width: 90%;           /* prend 90% de la largeur de l'écran */
+    margin-left: 5%;      /* décale légèrement vers le centre */
 }
+
+.boite .item img {
+    width: 150px;
+    height: auto;
+    border-radius: 50%;
+}
+
+
 
 .carte {
   display: grid;
-  grid-template-columns: 50% 50%; /* deux colonnes égales */
-  gap: 10px;                      /* espace entre les colonnes */
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
 }
 
 .num {
   display: grid;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: 1fr 1fr;
   gap: 10px;
 }
 
 /* ---------- Carte Google Maps ---------- */
-
 .maps {
   width: 100%;
   height: 100%;
@@ -77,45 +92,40 @@ div {
 }
 
 /* ---------- Bloc de contact ---------- */
-
 .contact {
   position: sticky;
-  top: 80px; /* reste visible après le bandeau */
+  top: 80px;
   background-color: white;
-  width: 328px;
-  height: 296px;
+  width: 100%;
+  max-width: 328px;
+  height: auto;
   border-radius: 4px;
   box-shadow: 0 2px 4px rgba(5, 43, 71, 0.07);
   padding: 20px;
 }
 
 /* ---------- Diplôme -------- */
-
 .diplome {
   display: flex;
-  gap: 20px;                /* espace horizontal entre la date et le nom */
-  align-items: flex-start;  /* aligne les textes en haut */
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: flex-start;
   padding: 8px 0;
-  font-family: 'Roboto', sans-serif;
   font-size: 14px;
   color: #294056;
 }
 
 .date {
-  width: 60px;              /* fixe une largeur pour bien aligner les colonnes */
+  width: 60px;
   font-weight: bold;
-  text-align: left;         /* aligne bien la date à gauche */
-  flex-shrink: 0;           /* empêche la date de rétrécir */
 }
 
 .nom-dip {
-  flex: 1;                  /* prend tout l’espace restant */
-  text-align: left;         /* texte du diplôme aligné à gauche */
+  flex: 1;
 }
 
-/* ---------- Horaires ------- */
-
-.horaires {
+/* ---------- Horaires / Tarifs ------- */
+.horaires, .prix {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -125,210 +135,195 @@ div {
 
 .ligne {
   display: flex;
-  justify-content: space-between; /* motif à gauche, prix à droite */
+  justify-content: space-between;
   align-items: center;
   padding: 10px 0;
-}
-
-.jour {
-  font-family: 'Roboto', sans-serif;
-  font-size: 14px;
-  color: #294056;
-}
-
-.ouvert {
-  font-family: 'Roboto', sans-serif;
-  font-size: 14px;
-  color: #192634;
-  font-weight: bold;
-}
-
-/* ---------- Tarif ---------- */
-
-.prix {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  border-radius: 4px;
-  overflow: hidden;
-}
-
-.ligne {
-  display: flex;
-  justify-content: space-between; /* motif à gauche, prix à droite */
-  align-items: center;
-  padding: 10px 0;
-  border-bottom: 1px solid #e4edf6; /* ligne de séparation */
-}
-
-.ligne:last-child {
-  border-top: none;
   border-bottom: 1px solid #e4edf6;
 }
 
-.ligne:first-child {
-  border-top: 1px solid #e4edf6;
+.ligne:last-child {
+  border-bottom: 1px solid #e4edf6;
 }
 
-.motif {
-  font-family: 'Roboto', sans-serif;
+.motif, .jour {
   font-size: 14px;
   color: #294056;
 }
 
-.price {
-  font-family: 'Roboto', sans-serif;
+.ouvert, .price {
   font-size: 14px;
-  color: #192634;
   font-weight: bold;
+  color: #192634;
 }
 
-/* ---------- Temoignages ---------- */
-
-figure{
+/* ---------- Témoignages ---------- */
+figure {
   display: flex;
-    justify-content: center;
-    align-items: center;
+  justify-content: center;
+  align-items: center;
+}
+
+figcaption {
+  font-style: italic;
+  line-height: 1.5rem;
 }
 
 /* ---------- Typographie ---------- */
-
 h1 {
   color: #ffffff;
   font-family: 'Montserrat', sans-serif;
   font-weight: bold;
-  font-size: 24px;
+  font-size: 1.5rem;
 }
 
 #mention {
   color: #ffffff;
-  font-family: 'Roboto', sans-serif;
-  font-size: 16px;
+  font-size: 1rem;
 }
 
 h2 {
   color: #192634;
   font-family: 'Montserrat', sans-serif;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 1.1rem;
 }
 
 h3 {
   color: #294056;
-  font-family: 'Roboto', sans-serif;
-  font-size: 14px;
+  font-size: 0.9rem;
   font-weight: bold;
+}
+
+h4 {
+  color: #107aca;
+  font-size: 0.9rem;
+  line-height: 1.5rem;
 }
 
 p {
   color: #294056;
-  font-family: 'Roboto', sans-serif;
-  font-size: 14px;
-  line-height: 32px;
-}
-
-figcaption{
-    color: #294056;
-  font-family: 'Roboto', sans-serif;
-  font-size: 14px;
-  line-height: 32px;
-  font-style:italic;
-}
-
-h4{
-  color: #107aca;
-  font-family: 'Roboto', sans-serif;
-  font-size: 14px;
-  line-height: 32px;
+  font-size: 0.9rem;
+  line-height: 1.5rem;
 }
 
 /* ---------- Images ---------- */
-
-#picture {
+#picture, #temoin {
   border-radius: 100%;
-  width: 120px;
-  display: block;
-  margin-right: 20px;
+  width: 80px;
+  height: auto;
+  margin-right: 10px;
 }
 
 .logo {
   display: block;
-  margin-left: 20px;
-}
-
-#temoin {
-  border-radius: 100%;
-  width: 120px;
-  margin-right: 20px;
+  margin-left: 10px;
 }
 
 /* ---------- Boutons ---------- */
-
-.rdv {
+.rdv, .send {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  background-color: #107ACA;
   border-radius: 8px;
-  border: none;
-  color: #FFFFFF;
-  font-family: 'Roboto', sans-serif;
-  font-size: 14px;
-  width: 296px;
+  font-size: 0.9rem;
+  width: 100%;
+  max-width: 296px;
   height: 40px;
-  text-decoration: none;      /* 🔹 empêche le soulignement */
-  transition: background-color 0.3s ease;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.rdv {
+  background-color: #107ACA;
+  color: #FFFFFF;
 }
 
 .rdv:hover {
   background-color: #0C5A96;
-  text-decoration: none;      /* 🔹 garde sans soulignement au survol */
 }
 
 .send {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
   background-color: #ffffff;
-  border-radius: 8px;
   border: 1px solid #107aca;
   color: #107aca;
-  font-family: 'Roboto', sans-serif;
-  font-size: 14px;
-  width: 296px;
-  height: 40px;
-  text-decoration: none; 
-
 }
 
 .send:hover {
   border: 1px solid #0c5a96;
   color: #0c5a96;
-  text-decoration: none; 
 }
 
 .send a {
-  color: inherit;             /* reprend la couleur du parent (.send) */
-  text-decoration: none;      /* enlève le soulignement */
-}
-
-.send a:hover {
-  color: inherit;             /* garde la même couleur au survol */
-  text-decoration: none;      /* pas de soulignement non plus au survol */
+  color: inherit;
+  text-decoration: none;
 }
 
 /* ---------- Étiquettes (tags) ---------- */
-
 .tag {
   display: inline-block;
   background-color: #e4edf6;
   color: #294056;
   padding: 6px 12px;
   border-radius: 4px;
-  font-family: 'Roboto', sans-serif;
-  font-size: 14px;
+  font-size: 0.9rem;
   margin: 4px;
   cursor: default;
+}
+
+/* ---------- Media Queries (responsive) ---------- */
+@media (max-width: 768px) {
+  .content, .carte, .num {
+    grid-template-columns: 1fr; /* une seule colonne sur tablette/téléphone */
+  }
+
+@media (max-width: 480px) {
+    .boite {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        margin-left: 0;  /* plein écran sur mobile */
+    }
+
+    .boite .item img {
+        width: 100px;
+    }
+}
+
+
+  .bandeau, {
+    height: auto;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+
+  #picture, #temoin {
+    width: 60px;
+    margin: 0 1rem 0 0; /* décale uniquement à droite */
+  display: block;      /* enlever margin auto */
+}
+  h1 {
+    font-size: 1.3rem;
+  }
+
+  h2 {
+    font-size: 1rem;
+  }
+
+  h3, h4, p, .motif, .jour, .ouvert, .price {
+    font-size: 0.85rem;
+  }
+
+  .rdv, .send {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .contact {
+    position: relative;
+    top: 0;
+    width: 100%;
+    margin: 1rem 0;
+  }
 }
