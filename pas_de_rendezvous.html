@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Docteur Eva Coindre – Pas de rendez-vous</title>
+  <link href="styles.css" rel="stylesheet">
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      background-color: #e4edf6;
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Bandeau bleu */
+    .bandeau {
+      background-color: #107aca;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      padding: 0 20px;
+      color: white;
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    /* Contenu centré */
+    main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: calc(100vh - 64px);
+      text-align: center;
+      color: #294056;
+    }
+
+    .message {
+      background-color: white;
+      padding: 40px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(5, 43, 71, 0.07);
+      max-width: 600px;
+    }
+
+    h1 {
+      font-family: 'Montserra', sans-serif;
+      font-size: 28px;
+      color: #192634;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    /* Bouton retour */
+    .retour {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 30px;
+      background-color: #107ACA;
+      border-radius: 8px;
+      border: none;
+      color: white;
+      font-size: 14px;
+      font-family: 'Roboto', sans-serif;
+      width: 200px;
+      height: 40px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .retour:hover {
+      background-color: #0C5A96;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="bandeau">
+    Docteur Eva Coindre
+  </header>
+
+  <main>
+    <section class="message">
+      <h1>Pas de rendez-vous disponibles</h1>
+      <p>
+        Le Docteur Coindre est actuellement en retraite spiritueuse <br>(c'est comme spirituelle mais avec plus d'alcool).</p>
+      <p>
+        Revenez bientôt, ou contactez le cabinet pour plus d’informations.
+      </p>
+
+      <a href="doctolol.html" class="retour">Retour à la page principale</a>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,334 @@
+/* ---------- Réglages généraux ---------- */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #e4edf6;
+}
+
+footer{
+  text-align: center;
+}
+
+/* ---------- Structure principale ---------- */
+
+.content {
+  display: grid;
+  grid-template-columns: 45% 45%; /* deux colonnes égales */
+  gap: 2%;                      /* espace entre les colonnes */
+  margin-left: 20%; 
+  width: 80%;
+}
+
+div {
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(5, 43, 71, 0.07);
+  padding: 10px;
+  display: block;
+  margin: 10px;
+}
+
+/* ---------- Sections principales ---------- */
+
+.bandeau {
+  background-color: #107aca;
+  width: 100%;
+  height: 64px;
+  display: flex;
+  align-items: center;
+}
+
+.annonce {
+  background-color: #2b4660;
+  width: 100%;
+  height: 152px;
+  display: flex;
+  align-items: center;
+}
+
+.boite{
+	display: flex;
+  	justify-content: center;
+  	align-items: center;
+  	margin: 21%;
+}
+
+.carte {
+  display: grid;
+  grid-template-columns: 50% 50%; /* deux colonnes égales */
+  gap: 10px;                      /* espace entre les colonnes */
+}
+
+.num {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  gap: 10px;
+}
+
+/* ---------- Carte Google Maps ---------- */
+
+.maps {
+  width: 100%;
+  height: 100%;
+  padding: 5px;
+}
+
+/* ---------- Bloc de contact ---------- */
+
+.contact {
+  position: sticky;
+  top: 80px; /* reste visible après le bandeau */
+  background-color: white;
+  width: 328px;
+  height: 296px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(5, 43, 71, 0.07);
+  padding: 20px;
+}
+
+/* ---------- Diplôme -------- */
+
+.diplome {
+  display: flex;
+  gap: 20px;                /* espace horizontal entre la date et le nom */
+  align-items: flex-start;  /* aligne les textes en haut */
+  padding: 8px 0;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  color: #294056;
+}
+
+.date {
+  width: 60px;              /* fixe une largeur pour bien aligner les colonnes */
+  font-weight: bold;
+  text-align: left;         /* aligne bien la date à gauche */
+  flex-shrink: 0;           /* empêche la date de rétrécir */
+}
+
+.nom-dip {
+  flex: 1;                  /* prend tout l’espace restant */
+  text-align: left;         /* texte du diplôme aligné à gauche */
+}
+
+/* ---------- Horaires ------- */
+
+.horaires {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.ligne {
+  display: flex;
+  justify-content: space-between; /* motif à gauche, prix à droite */
+  align-items: center;
+  padding: 10px 0;
+}
+
+.jour {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  color: #294056;
+}
+
+.ouvert {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  color: #192634;
+  font-weight: bold;
+}
+
+/* ---------- Tarif ---------- */
+
+.prix {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.ligne {
+  display: flex;
+  justify-content: space-between; /* motif à gauche, prix à droite */
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #e4edf6; /* ligne de séparation */
+}
+
+.ligne:last-child {
+  border-top: none;
+  border-bottom: 1px solid #e4edf6;
+}
+
+.ligne:first-child {
+  border-top: 1px solid #e4edf6;
+}
+
+.motif {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  color: #294056;
+}
+
+.price {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  color: #192634;
+  font-weight: bold;
+}
+
+/* ---------- Temoignages ---------- */
+
+figure{
+  display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ---------- Typographie ---------- */
+
+h1 {
+  color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+#mention {
+  color: #ffffff;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+}
+
+h2 {
+  color: #192634;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+h3 {
+  color: #294056;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+p {
+  color: #294056;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  line-height: 32px;
+}
+
+figcaption{
+    color: #294056;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  line-height: 32px;
+  font-style:italic;
+}
+
+h4{
+  color: #107aca;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  line-height: 32px;
+}
+
+/* ---------- Images ---------- */
+
+#picture {
+  border-radius: 100%;
+  width: 120px;
+  display: block;
+  margin-right: 20px;
+}
+
+.logo {
+  display: block;
+  margin-left: 20px;
+}
+
+#temoin {
+  border-radius: 100%;
+  width: 120px;
+  margin-right: 20px;
+}
+
+/* ---------- Boutons ---------- */
+
+.rdv {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: #107ACA;
+  border-radius: 8px;
+  border: none;
+  color: #FFFFFF;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  width: 296px;
+  height: 40px;
+  text-decoration: none;      /* 🔹 empêche le soulignement */
+  transition: background-color 0.3s ease;
+}
+
+.rdv:hover {
+  background-color: #0C5A96;
+  text-decoration: none;      /* 🔹 garde sans soulignement au survol */
+}
+
+.send {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  border: 1px solid #107aca;
+  color: #107aca;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  width: 296px;
+  height: 40px;
+  text-decoration: none; 
+
+}
+
+.send:hover {
+  border: 1px solid #0c5a96;
+  color: #0c5a96;
+  text-decoration: none; 
+}
+
+.send a {
+  color: inherit;             /* reprend la couleur du parent (.send) */
+  text-decoration: none;      /* enlève le soulignement */
+}
+
+.send a:hover {
+  color: inherit;             /* garde la même couleur au survol */
+  text-decoration: none;      /* pas de soulignement non plus au survol */
+}
+
+/* ---------- Étiquettes (tags) ---------- */
+
+.tag {
+  display: inline-block;
+  background-color: #e4edf6;
+  color: #294056;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  margin: 4px;
+  cursor: default;
+}
